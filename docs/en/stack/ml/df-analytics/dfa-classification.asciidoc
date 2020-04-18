@@ -149,12 +149,10 @@ You can measure how well the model has performed on your data set by using the
 {ref}/evaluate-dfanalytics.html[evaluate {dfanalytics} API]. The metric that the 
 evaluation provides you is a confusion matrix. The more classes you have, the 
 more complex the confusion matrix is. The matrix tells you how many data points 
-that belong to a given class were classified correctly and incorrectly. You can
-also view this matrix in {kib}.
+that belong to a given class were classified correctly and incorrectly.
 
-Another crucial measurement is how well your model performs on unseen data 
-points. To assess how well the trained model will perform on data it has never 
-seen before, you must set aside a proportion of your data as the
-_testing data set_. Once the model has been trained, you can let the model
-predict the value of the data points it has never seen before and compare the
-prediction to the actual value. See <<ml-dfanalytics-evaluate>>.
+If you split your data set into training and testing data, you can determine how
+well your model performs on data it has never seen before and compare the
+prediction to the actual value.
+
+For more information, see <<ml-dfanalytics-evaluate>>.
