@@ -48,6 +48,20 @@ represented in the training data set, the model might be unaware of them. In
 general, complex decision boundaries between classes are harder to learn and
 require more data points per class in the training data.
 
+////
+It means that you need to supply a labeled training data set that has a {depvar} 
+and some fields that are related to it. The {classification} algorithm learns 
+the relationships between these fields and the {depvar}. Once you’ve trained the 
+model on your training data set, you can reuse the knowledge that the model has 
+learned about the relationships between the data points to classify new data.
+
+The effects of imbalanced data are automatically mitigated before the 
+training. Nonetheless, it is a good idea to train your model with a data set 
+that is approximately balanced. That is to say, ideally your data set should 
+have a similar number of data points for each class.
+
+////
+
 [discrete]
 [[dfa-classification-algorithm]]
 ===== {classification-cap} algorithms
