@@ -36,11 +36,12 @@ When you create the {dfanalytics-job}, you must provide a data set that contains
 the _ground truth_. That is to say, your data set must contain the {depvar} 
 and the {feature-vars} fields that are related to it. You can divide the data
 set into training and testing data by specifying a `training_percent`. By
-default when you use the <<put-dfanalytics,create {dfanalytics-jobs} API>>, 100%
-of the eligible documents in the data set are used for training. If you divide
-your data set, the job stratifies the data to ensure that both the training and
-testing data sets are representative of the full data set. That is to say, the
-same proportions of each class are fairly represented in both data sets.
+default when you use the
+{ref}put-dfanalytics.html[create {dfanalytics-jobs} API], 100% of the eligible
+documents in the data set are used for training. If you divide your data set,
+the job stratifies the data to ensure that both the training and testing data
+sets are representative of the full data set. That is to say, the same
+proportions of each class are fairly represented in both data sets.
 
 When you are collecting a data set to train your model, ensure that it
 captures information for all of the classes. If some classes are poorly
@@ -59,7 +60,6 @@ The effects of imbalanced data are automatically mitigated before the
 training. Nonetheless, it is a good idea to train your model with a data set 
 that is approximately balanced. That is to say, ideally your data set should 
 have a similar number of data points for each class.
-
 ////
 
 [discrete]
@@ -170,3 +170,13 @@ well your model performs on data it has never seen before and compare the
 prediction to the actual value.
 
 For more information, see <<ml-dfanalytics-evaluate>>.
+
+////
+Another crucial measurement is how well your model performs on unseen data
+points. To assess how well the trained model will perform on data it has never
+seen before, you must set aside a proportion of the training data set for 
+testing. This split of the data set is the _testing data set_. Once the model has 
+been trained, you can let the model predict the value of the data points it has 
+never seen before and compare the prediction to the actual value by using the 
+evaluate {dfanalytics} API.
+////
